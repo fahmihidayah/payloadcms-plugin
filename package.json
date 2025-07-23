@@ -5,16 +5,38 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,json}\"",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@swc/cli": "^0.5.2",
+    "@swc/core": "^1.12.7",
+    "chokidar": "^3.6.0",
+    "copyfiles": "^2.4.1",
     "prettier": "^3.6.2",
     "turbo": "^2.5.5",
     "typescript": "5.8.3"
   },
-  "packageManager": "pnpm@9.0.0",
   "engines": {
-    "node": ">=18"
+    "node": "^18.20.2 || >=20.9.0",
+    "pnpm": "^9.7.0"
+  },
+  "packageManager": "pnpm@9.12.2",
+  "resolutions": {
+    "react": "^19",
+    "react-dom": "^19",
+    "esbuild": "^0.25.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "0.23.1"
+    },
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+    
   }
 }
